@@ -16,12 +16,24 @@ const mongoose = require('mongoose');
         province:{type:String,require:true},
         license:{type:String,require:true},
         status:{type:String,require:true},
-        favorateLawGroup:{type:String,require:true},
+        favorateLawGroup:{type:[Object],require:true},
     },
     {
         timestamps:true
     }
  )
 
+ const aptitudeLawSchema = mongoose.Schema(
+    {
+        apt_id:{type:String,require:true},
+        apt_desription:{type:String,require:true},
+    },
+    {
+        timestamps:true
+    }
+ )
+
+
  const Customer = mongoose.model('Customer',userSchema);
- module.exports = Customer ;
+ const Aptitude = mongoose.model('Aptitude',aptitudeLawSchema);
+ module.exports = { Customer,Aptitude} ;

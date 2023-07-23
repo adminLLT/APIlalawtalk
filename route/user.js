@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Customer = require('../model/user');
+const { Customer } = require('../model/user/user');
 require('../db/connectMongo')
 
 router.post('/register', async (req, res) => {
