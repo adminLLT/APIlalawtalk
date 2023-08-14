@@ -5,10 +5,6 @@ const mongoose = require('mongoose');
         chatroomName:{type:String,require:true},
         userId:{type:String,require:true},
         lawyerId:{type:String,require:true}
-       
-      
-     
-        
     },
     {
         timestamps:true

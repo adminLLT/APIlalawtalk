@@ -2,9 +2,10 @@
 const express = require('express');
 const cors = require('cors');
 // const config = require('./db/connectMongo')
-const user = require('./route/user')
+const user = require('./route/user/user')
 const random = require('./route/randomLaw')
 const Apt = require('./route/apt/addAptitude')
+const ActiveWork = require('./route/user/activeStatusWork')
 
 
 const app = express() ;
@@ -18,6 +19,7 @@ app.get('/lalawtalk', (req, res) => {
 app.use('/lalawtalk', user)
 app.use('/lalawtalk', random)
 app.use('/lalawtalk',Apt)
+app.use('/lalawtalk',ActiveWork)
 
 
 app.listen(3000, () => {
