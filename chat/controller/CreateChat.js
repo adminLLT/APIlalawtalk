@@ -17,6 +17,10 @@ CreateChat.post('/CreateChat', async (req, res) => {
                     id:1,conversation:[{user:user,lawyer:lawyer}]
                 }
         )
+        await MessageData.create(
+            {
+                conversation_id:1,dataConvasation:[{sender:'',message:''}]
+            })
       }else{
 
          var idauto = autonumber.id +1
