@@ -10,6 +10,8 @@ const dbConfig = require('../db/dbconfig');
 const nocache = require('nocache');
 const router = express.Router() ;
 
+
+//createchatroom after random 
 router.post('/gochat',async (req,res)=>{
     const { user_id, user_lawyer } = req.body;
 
@@ -58,6 +60,7 @@ router.post('/gochat',async (req,res)=>{
   }
 });
 
+//send message 
 router.post('/gochat/send',async (req,res)=>{
     const { chatRoomId, senderId, receiverId, message } = req.body;
 
@@ -84,7 +87,9 @@ router.post('/gochat/send',async (req,res)=>{
       res.status(500).json({ message: 'An error occurred while sending the message.' });
     }
 });
-// api original
+
+
+// api original read message in chat room 
 router.post('/gochat/chatRoomId',nocache(), async (req,res)=>{
      const { chatRoomId } = req.body;
   //  const  chatRoomId  ='4';
@@ -108,7 +113,7 @@ router.post('/gochat/chatRoomId',nocache(), async (req,res)=>{
 });
 
 
-
+// ดูว่า id นี้ มีห้องแชทกี่ห้อง
 router.get('/messagelist', async (req, res) => {
   const { userId } = req.query;
   console.log(userId);
