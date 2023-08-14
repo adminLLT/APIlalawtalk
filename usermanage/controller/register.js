@@ -2,7 +2,8 @@
 const express = require('express');
 const register = express.Router();
 
-const Customer = require('../../model/user')
+const { Customer } = require('../../model/user')
+require('../../config/connectMongo')
 
 register.post('/addUser', async (req, res) => {
   try {
